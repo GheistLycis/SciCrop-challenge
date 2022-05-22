@@ -7,19 +7,29 @@ class Map {
 
     async registerLocation() {
         const sql = `
-
+            INSERT INTO locations VALUES (
+                "${this.data.name}",
+                "${this.data.longitude}",
+                "${this.data.latitude}"
+            )
         `
 
-        return await db.execute(sql)
+        return db.promise().query(sql)
+            .then(([rows]) => rows)
+            .catch(error => {
+                throw error
+            })
     }
 
     async getAllLocations() {
-        const sql = `
+        const sql = "SELECT * FROM locations"
 
-        `
-
-        return await db.execute(sql)
-    }
+        return db.promise().query(sql)
+            .then(([rows]) => rows)
+            .catch(error => {
+                throw error
+            })
+    } 
 }
-
+ 
 module.exports = Map

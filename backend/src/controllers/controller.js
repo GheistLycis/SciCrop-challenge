@@ -4,7 +4,7 @@ async function get(req, res) {
     const map = new Map()
     
     await map.getAllLocations()
-        .then(results => res.send(results))
+        .then(result => res.send(result))
         .catch(err => res.send(`Failed to load locations - ERROR: ${err}`))
 }
 
