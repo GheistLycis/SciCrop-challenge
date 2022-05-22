@@ -1,13 +1,10 @@
-import Link from "next/link"
-import Template from "../template/Default"
+import { Link } from "react-router-dom"
 
-export default function Map() {
+export default function Register() {
     return (
-        <Template>
-            <h1>MAP</h1>
-            <Link href="/">
-                <button>Go to map</button>
-            </Link>
-        </Template>
+        <>
+            <h1>REGISTER FORM PAGE</h1>
+            <button><Link to="/">Go to Map</Link></button>
+        </>
     )
 }
