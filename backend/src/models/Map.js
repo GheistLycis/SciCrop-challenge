@@ -9,8 +9,8 @@ class Map {
         const sql = `
             INSERT INTO locations VALUES (
                 "${this.data.name}",
-                "${this.data.longitude}",
-                "${this.data.latitude}"
+                "${this.data.latitude}",
+                "${this.data.longitude}"
             )
         `
 
