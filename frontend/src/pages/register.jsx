@@ -1,10 +1,12 @@
 import axios from "axios"
-import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 
-import styles from "../styles/Register.module.css"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
-//obs: mds que sono vontade de morrer xande vc me paga
+import "../styles/Register.css"
+
+//obs: mds que sono vontade de morrer
 export default function Register() {
     //SAVING INPUTS
     const [values, setValues] = useState({})
@@ -61,20 +63,22 @@ export default function Register() {
     }
         
     return (
-        <main className={styles.container}>
-            <div className={styles.overlay}>
-                <h1>New Location</h1>
+        <>
+            <Header btnLink="/" btnText="Go to Map" />
+            <main className="container">
+                <div className="overlay">
+                    <h1>New Location</h1>
 
-                <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}> 
-                    <input id="name" required placeholder="Name" onChange={e => handleChange(e)} className={styles.input} />
-                    <input id="latitude" required placeholder="Latitude" onChange={e => handleChange(e)} className={styles.input} />
-                    <input id="longitude" required placeholder="Longitude" onChange={e => handleChange(e)} className={styles.input} />
+                    <form autoComplete="off" onSubmit={handleSubmit} className="form"> 
+                        <input id="name" required placeholder="Name" onChange={e => handleChange(e)} className="input" />
+                        <input id="latitude" required placeholder="Latitude" onChange={e => handleChange(e)} className="input" />
+                        <input id="longitude" required placeholder="Longitude" onChange={e => handleChange(e)} className="input" />
 
-                    <button className={styles.btnRegister}>Register Location</button>
-                </form>
-            </div>
-
-            <button><Link to="/">Go to Map</Link></button>
-        </main>
+                        <button className="btnRegister">Register Location</button>
+                    </form>
+                </div>
+            </main>
+            <Footer />
+        </>
     )
 }

@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    background-color: #91d16b;
+    height: 15vh;
+    border-bottom: 1px solid black;
+}
+ 
+.scicrop {
+    font-weight: 400;
+    align-self: center;
+}
+
+.leaf {
+    margin: 15px 20px;
+} 
+
+.btn {
+    justify-self: flex-end;
+}

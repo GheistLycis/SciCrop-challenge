@@ -1,5 +1,14 @@
-export default function Header() {
+import { Link } from "react-router-dom"
+
+import styles from "../styles/Header.module.css"
+import img from "../public/logo_scicrop.png"
+
+export default function Header({ btnLink, btnText }) {
     return (
-        <h1>HEADER</h1>
+        <div className={styles.header}>
+            <img src={img} alt="sci_crop leaf" className={styles.leaf}></img>
+            <h1 className={styles.scicrop}>SciCrop</h1>
+            <button className={styles.btn}><Link to={btnLink}>{btnText}</Link></button>
+        </div>
     )
-}
+}  
