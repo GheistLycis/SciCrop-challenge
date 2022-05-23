@@ -4,7 +4,7 @@ class Map {
     constructor(data) {
         this.data = data
     }
-
+ 
     async registerLocation() {
         const sql = `
             INSERT INTO locations (

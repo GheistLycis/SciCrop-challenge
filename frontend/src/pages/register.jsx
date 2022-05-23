@@ -9,8 +9,8 @@ export default function Register() {
     //SAVING INPUTS
     const [values, setValues] = useState({})
     function handleChange(e) {
-        const str = e.target.value.replace(",", ".")
-        setValues({ ...values, [e.target.id]: str })
+        const input = e.target.id === "name" ? e.target.value : parseFloat(e.target.value.replace(",", "."))
+        setValues({ ...values, [e.target.id]: input })
     }
     useEffect(() => {
         handleCoords()
@@ -44,14 +44,20 @@ export default function Register() {
                     case "validLon":
                         alert("Insert a valid longitude!")
                         break
+                    default:
+                        break
                 }
                 return
             }
         }
-
-        axios.post("http://localhost:8080", values)
-        .then(res => console.log(res.data))
-        .catch(res => console.log(res))
+ 
+        axios({
+            method: "post",
+            url: "http://localhost:8080/register",
+            data: values
+        })
+            .then(res => alert(`${res.data} Go check the map!`))
+            .catch(err => console.error(err))
     }
         
     return (

@@ -16,8 +16,8 @@ export default function Map() {
 
     useEffect(() => {
         getData()
-     }, [data])
-    
+     }, [])
+     
     return (
         <main>
             <MapContainer center={[-23.6334841179179, -46.46843854558035]} zoom={13} scrollWheelZoom={true}>

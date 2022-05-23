@@ -7,7 +7,7 @@ async function get(req, res) {
         .then(result => res.send(result))
         .catch(err => res.send(`Failed to load locations - ERROR: ${err}`))
 }
-
+ 
 async function post(req, res) {
     const data = req.body
     const map = new Map(data)
