@@ -7,10 +7,15 @@ class Map {
 
     async registerLocation() {
         const sql = `
-            INSERT INTO locations VALUES (
+            INSERT INTO locations (
+                name,
+                latitude,
+                longitude
+            )
+            VALUES (
                 "${this.data.name}",
-                "${this.data.latitude}",
-                "${this.data.longitude}"
+                ${this.data.latitude},
+                ${this.data.longitude}
             )
         `
 
