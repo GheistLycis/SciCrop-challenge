@@ -1,8 +1,13 @@
 .header {
     display: flex;
+    justify-content: space-between;
     background-color: #91d16b;
     height: 15vh;
     border-bottom: 1px solid black;
+}
+
+.logo {
+    display: flex;
 }
  
 .scicrop {
@@ -15,5 +20,7 @@
 } 
 
 .btn {
-    justify-self: flex-end;
+    margin-right: 20px;
+    width: 200px;
+    height: 30px;
 }
